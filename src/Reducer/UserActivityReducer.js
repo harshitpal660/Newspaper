@@ -12,6 +12,8 @@ const initialState = {
     isLoggedin:false,
     userData:{}, 
     interest:JSON.parse(localStorage.getItem(localStorageKey)) || [],
+    query:"",
+    fetchedData:{}
 }
 
 export const loginSlice = createSlice({
@@ -25,7 +27,7 @@ export const loginSlice = createSlice({
 })
 
 export const userDataSlice = createSlice({
-    name: 'Login',
+    name: 'user data',
     initialState:initialState.userData,
     reducers :{
         setUserData:(state,action)=>{
@@ -47,7 +49,7 @@ export const userDataSlice = createSlice({
 })
 
 export const userInterestSlice = createSlice({
-    name: 'Login',
+    name: 'interest',
     initialState:initialState.interest,
     reducers :{
         setUserInterest:(state,action)=>{
@@ -67,8 +69,28 @@ export const userInterestSlice = createSlice({
     }
 })
 
+export const querySlice = createSlice({
+    name: 'query',
+    initialState:initialState.query,
+    reducers :{
+        setQuery:(state,action)=>{
+            return action.payload;
+        }
+    }
+})
 
+export const fetchedDataSlice = createSlice({
+    name: 'fetchedData',
+    initialState:initialState.fetchedData,
+    reducers :{
+        setData:(state,action)=>{
+            return action.payload;
+        }
+    }
+})
 
 export const {toggleLogin} = loginSlice.actions;
 export const {setUserData} = userDataSlice.actions;
 export const {setUserInterest} = userInterestSlice.actions;
+export const {setQuery} = querySlice.actions;
+export const {setData} = fetchedDataSlice.actions;

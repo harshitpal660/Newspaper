@@ -7,6 +7,13 @@ export const topHeadlinesURL = () => {
     return url;
 };
 
+export const SearchQueryURL = (query) => {
+  console.log(query);
+  const url = API.SearchQuery(API_KEY,query);
+  console.log(url);
+  return url;
+};
+
 export const fetchData = async (url) => {
     const response = await fetch(url)
       .then((response) => {
