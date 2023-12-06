@@ -3,14 +3,18 @@ import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import logo from "../Images/logo.jpg"
 
+import styles from "../Styles/Home.module.css"
 const Navbar=()=> {
   const dispatch = useDispatch();
   const isLoggedin = useSelector((state) => state.loginStatus);
   return (
-    <div className="navContainer">
+    <div className={styles.navContainer}>
       <div>
-        <div className="logo"></div>
+        <div className={styles.logo}>
+          <img src={logo}></img>
+        </div>
         <div>
           <div>
             <p>

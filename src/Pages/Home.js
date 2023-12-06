@@ -6,7 +6,9 @@ import Navbar from "../Component/Navbar";
 import { useState } from "react";
 import { useEffect } from "react";
 
-import { API } from "../Utils/APICalls";
+import { Card } from "../Component/Card";
+// import { fetchData } from "../Utils/APICalls";
+import { topHeadlinesURL,fetchData } from "../Utils";
 function Home() {
   const dispatch = useDispatch();
   const isLoggedin = useSelector((state) => state.loginStatus);
@@ -16,24 +18,19 @@ function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchDataAsync = async () => {
       try {
-        const response = await fetch(API.TopHeadlines); // Replace with your API endpoint
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        console.log(response.json());
+        const topHeadlines = topHeadlinesURL(); // Replace with your API endpoint
+
+        const topHeadlinesResponse = await Promise.resolve(fetchData(topHeadlines));
+       
+        console.log(topHeadlinesResponse.articles);
         // const contentType = response.headers.get('content-type');
         // if (!contentType || !contentType.includes('application/json')) {
         //   throw new Error('Response is not in JSON format');
         // }
-
-        const data = await response.json();
-        data.then((result)=>{
-          console.log(result);
-        })
-        setData(data);
-        console.log(data);
+        setData(topHeadlinesResponse.articles);
+        // console.log(data);
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {
@@ -41,7 +38,7 @@ function Home() {
       }
     };
 
-    fetchData();
+    fetchDataAsync();
   }, []); // The empty dependency array ensures that the effect runs only once, similar to componentDidMount
 
   if (loading) {
@@ -57,7 +54,11 @@ function Home() {
       </div>
       ):(
       <div className="Home">
-        <h1>Home</h1>
+        {data.map((item)=>{
+          return (<Card
+          item={item}
+          />)
+        })}
       </div>
       )}
     </>

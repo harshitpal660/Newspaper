@@ -1,0 +1,40 @@
+/* Navbar container */
+.navContainer {
+  background-color: #333; /* Set your desired background color */
+  padding: 10px;
+  color: white; /* Set the text color */
+}
+
+/* Logo styles */
+.logo {
+  /* Add styles for your logo */
+  width: 50px;
+  height: 50px;
+  background-color: #fff; /* Set your logo background color */
+  overflow: hidden;
+}
+
+.logo img{
+  height: 100%;
+  width: 100%;
+}
+
+/* Navigation links styles */
+.navContainer div {
+  display: flex;
+  align-items: center;
+}
+
+.navContainer a {
+  text-decoration: none;
+  color: white; /* Set the text color for links */
+  margin: 0 15px; /* Adjust spacing between links */
+  font-weight: bold; /* Set the font weight */
+}
+
+/* Hover effect for links */
+.navContainer a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+
