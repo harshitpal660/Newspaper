@@ -58,11 +58,11 @@ function Login() {
   return (
     <>
     <Navbar/>
-        <div className="loginContainer">
-          <div className="header">
+        <div className={styles.loginContainer}>
+          <div className={styles.header}>
             <h1>Login</h1>
           </div>
-          <div className="box">
+          <div className={styles.box}>
             <input
               type="text"
               value={email}
@@ -70,7 +70,7 @@ function Login() {
               onChange={(e) => setEmail(e.target.value)}
             ></input>
           </div>
-          <div className="box">
+          <div className={styles.box}>
             <input
               type="password"
               value={password}

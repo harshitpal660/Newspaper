@@ -13,6 +13,3 @@ export const API = {
     
 } 
 
-// https://newsapi.org/v2/everything?q=tesla&from=2023-12-06&sortBy=popularity&apiKey=be71e86ba2a64bc79658f9bebd1870b3
-
-// https://newsapi.org/v2/everything?q=tesla&from=2023-11-06&sortBy=publishedAt&apiKey=be71e86ba2a64bc79658f9bebd1870b3

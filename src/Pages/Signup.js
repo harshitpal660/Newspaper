@@ -48,20 +48,20 @@ function Signup() {
   return (
     <>
     <Navbar/>
-    <div className="signupContainer">
-      <div className="header">
+    <div className={styles.signupContainer}>
+      <div className={styles.header}>
         <h1>Signup</h1>
       </div>
-      <div className="box">
+      <div className={styles.box}>
         <input type="text" value={displayName} placeholder="Full Name" onChange={(e)=>setDisplayName(e.target.value)}></input>
       </div>
-      <div className="box">
+      <div className={styles.box}>
         <input type="text" value={name} placeholder="User Name" onChange={(e)=>setName(e.target.value)}></input>
       </div>
-      <div className="box">
+      <div className={styles.box}>
         <input type="email" value={email} placeholder="john@gmail.com" onChange={(e)=>setEmail(e.target.value)}></input>
       </div>
-      <div className="box">
+      <div className={styles.box}>
         <input type="password" value={password} placeholder="Password" onChange={(e)=>setPassword(e.target.value)}></input>
       </div>
       <p>Already have an account? <Link to="/login">Login now</Link></p>
