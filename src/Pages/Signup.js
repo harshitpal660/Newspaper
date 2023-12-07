@@ -6,6 +6,7 @@ import { app, createUserDocument } from "../FirebaseConfig";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import Navbar from "../Component/Navbar";
+import styles from "../Styles/Signup.module.css"
 
 function Signup() {
 

@@ -7,6 +7,10 @@ import { useDispatch } from "react-redux";
 import { setUserData,toggleLogin } from "../Reducer/UserActivityReducer";
 import Interest from "./Interest";
 import Navbar from "../Component/Navbar";
+import { isCompositeComponent } from "react-dom/test-utils";
+
+import styles from "../Styles/Login.module.css"
+
 function Login() {
 
   // state for email and password

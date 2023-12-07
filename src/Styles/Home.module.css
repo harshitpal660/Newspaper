@@ -85,4 +85,18 @@ button:hover {
 
 .cardWrapper{
   flex: 1;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.imageWrapper{
+  height: 50vw;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.imageWrapper img{
+  height: 100%;
+  width: 100%;
 }
